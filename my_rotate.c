@@ -11,6 +11,8 @@ int main() {
 	unsigned short d; /*the number to convert to binary*/
 	unsigned short result; /*the rotated number*/
 	char b; /*the amount & direction to rotate to char form*/
+	printf("Please enter a number to rotate and the amount of bits to rotate it by.\
+			\nIf the rotation amount is smaller than 0 it will be rotated to the right, otherwise it will be rotated to the left.\n");
 	scanf("%hu %hu", &a, &c); /*get the number to rotate and the amount to rotate*/
 	b = c; /*convert the amount to rotate from int to char*/
 	result = my_rotate(a, b); /*rotate the number and save the result*/
@@ -20,7 +22,7 @@ int main() {
 			The result is: %hu\n", a, (b > 0) ? "left" : "right", (b > 0) ? b : b * -1 , result); /*print the number, direction of rotation, amount of rotation, and the rotated number*/
 	printf("\nPlease input a number to be converted to binary: "); /*asks to input a number to be converted to binary*/
 	scanf("%hu", &d); /*gets the number to be converted to binary*/
-	printf("\nYour Input: %hu\n", d);
+	printf("\nYour Input: %hu\nYour input in binary: ", d);
 	print_short_bin(d); /*prints the number in binary form*/
 	return 0;
 } /*end of main*/
@@ -73,4 +75,5 @@ void print_short_bin(unsigned short toConvert){ /*prints toConvert in binary for
 		tmp = x1 & toConvert; /*gets the current bit*/
 		putchar(tmp > 0 ? '1' : '0'); /*prints the current bit*/
 	} /*end of for*/
+	putchar('\n');
 } /*end of print_short_bin*/
